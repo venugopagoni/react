@@ -1,0 +1,88 @@
+.searchBarWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchInput {
+  font-family: Arial, Roboto, sans-serif;
+  font-size: 1rem;
+  padding: 0.5em 2.5em 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+  transition: width 0.3s;
+}
+
+.searchInput:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px #90caf9;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 2.5em;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #1976d2;
+  padding: 0 0.5em;
+}
+
+.searchIcon {
+  pointer-events: none;
+}
+
+.cancelButton {
+  margin-left: 0.5em;
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 1em;
+  cursor: pointer;
+  display: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .searchBarWrapper {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .searchInput {
+    width: 0;
+    min-width: 0;
+    padding-left: 0.5em;
+    opacity: 0;
+    pointer-events: none;
+    transition: width 0.3s, opacity 0.3s;
+  }
+  .expanded .searchInput {
+    width: 100vw;
+    min-width: 0;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+  }
+  .cancelButton {
+    display: inline;
+  }
+}

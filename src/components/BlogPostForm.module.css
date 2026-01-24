@@ -1,0 +1,118 @@
+.blogPostForm {
+  font-family: 'Arial', 'Roboto', sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  flex: 0 0 180px;
+  text-align: right;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+  padding-top: 8px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  flex: 1 1 0;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafbfc;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px #e3f0ff;
+}
+
+.inputError {
+  border-color: #ff0000 !important;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 14px;
+  margin: 6px 0 0 0;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButton {
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 32px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.submitButton:disabled {
+  background: #6cb2ff;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1200px) {
+  .blogPostForm {
+    max-width: 98vw;
+    padding: 20px 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogPostForm {
+    padding: 16px 2vw;
+  }
+  .formGroup {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 15px;
+  }
+  .formGroup label {
+    text-align: left;
+    margin-bottom: 5px;
+    margin-right: 0;
+    font-size: 14px;
+    padding-top: 0;
+  }
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .error {
+    font-size: 12px;
+  }
+  .buttonRow {
+    justify-content: stretch;
+  }
+  .submitButton {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
